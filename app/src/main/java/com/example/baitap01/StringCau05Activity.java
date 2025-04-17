@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class StringCau05Activity extends AppCompatActivity {
@@ -17,6 +18,8 @@ public class StringCau05Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_string);
         editTextInput = findViewById(R.id.editTextInput);
         buttonReverse = findViewById(R.id.buttonReverse);
         textViewResult = findViewById(R.id.textViewKetQua);
@@ -27,9 +30,20 @@ public class StringCau05Activity extends AppCompatActivity {
                 String inputText = editTextInput.getText().toString().trim();
 
                 if (!inputText.isEmpty()) {
-                    String reversedText = daoChuoi(inputText);
-                    String result = reversedText.toUpperCase();
-                    textViewResult.setText(result);
+
+                    // Hiển thị lên TextView
+                    textViewResult.setText(inputText);
+
+                    // Xử lý đảo ngược chuỗi theo từng từ
+                    String[] words = inputText.split("\\s+"); // tách theo khoảng trắng
+                    StringBuilder reversed = new StringBuilder();
+
+                    for (int i = words.length - 1; i >= 0; i--) {
+                        reversed.append(words[i]).append(" ");
+                    }
+
+                    // Loại bỏ khoảng trắng dư và in hoa
+                    String result = reversed.toString().trim().toUpperCase();
 
                     Toast.makeText(StringCau05Activity.this, result, Toast.LENGTH_LONG).show();
                 } else {

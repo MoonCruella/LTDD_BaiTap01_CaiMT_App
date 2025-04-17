@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -17,36 +18,32 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class LogActivity extends AppCompatActivity {
 
     Button btnOk;
-    EditText editTextNum;
-    TextView textViewArray;
+    EditText arrayList;
     TextView textViewChan;
     TextView textViewLe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_log);
         btnOk = (Button)findViewById(R.id.buttonOk);
-        editTextNum = (EditText)findViewById(R.id.editTextNumber);
-        textViewArray = (TextView)findViewById(R.id.textViewArray);
         textViewChan = (TextView)findViewById(R.id.textViewSoChan);
         textViewLe = (TextView)findViewById(R.id.textViewSoLe);
-
+        arrayList = (EditText) findViewById(R.id.arrayList);
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewArray.setText("");
                 textViewChan.setText("");
                 textViewLe.setText("");
-                int num = Integer.parseInt(String.valueOf(editTextNum));
-                for (int i = 0; i < num; i++) {
-                    Random random = new Random();
-                    int ranInt = random.nextInt(100) + 1;
-                    textViewArray.append((ranInt + "  "));
+                String input = arrayList.getText().toString();
+                String[] numbers = input.split(",");
+                for (int i = 0; i < numbers.length; i++) {
+                    int ranInt = Integer.parseInt(numbers[i]);
+                    double result = Math.log10(ranInt);
                     if (ranInt % 2 == 0) {
-                        textViewChan.append((ranInt + "  "));
+                        textViewChan.append((result + "    "));
                     } else {
-                        textViewLe.append((ranInt + "  "));
-
+                        textViewLe.append((result + "    "));
                     }
                 }
             }

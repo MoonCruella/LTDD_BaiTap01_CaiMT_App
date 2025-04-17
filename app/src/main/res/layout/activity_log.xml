@@ -1,67 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewArray"
-        android:layout_width="334dp"
-        android:layout_height="61dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="222dp" />
-
-    <TextView
-        android:id="@+id/textViewSoLe"
-        android:layout_width="329dp"
-        android:layout_height="79dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="550dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="201dp"
-        android:layout_height="31dp"
-        android:text="Log số lẻ : "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="493dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="201dp"
-        android:layout_height="31dp"
-        android:text="Log số chẵn : "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <TextView
-        android:id="@+id/textViewSoChan"
-        android:layout_width="329dp"
-        android:layout_height="83dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="379dp" />
-
     <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="257dp"
-        android:layout_height="43dp"
+        android:layout_margin="20dp"
+        android:id="@+id/arrayList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Nhập số lượng số trong mảng "
+        android:hint="Nhập mảng "
         tools:layout_editor_absoluteX="77dp"
         tools:layout_editor_absoluteY="82dp" />
-
     <Button
+        android:layout_margin="20dp"
         android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,4 +26,49 @@
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="137dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_margin="20dp"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log số chẵn : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <TextView
+        android:layout_margin="20dp"
+        android:id="@+id/textViewSoChan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/material_dynamic_neutral80"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="379dp" />
+
+    <TextView
+        android:layout_margin="20dp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log số lẻ : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="493dp" />
+
+    <TextView
+        android:layout_margin="20dp"
+        android:id="@+id/textViewSoLe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/material_dynamic_neutral80"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="550dp" />
+
+
+
+</LinearLayout>
